@@ -8,6 +8,10 @@ bun i
 
 To run:
 
+create a `.env` file in the root directory with credentials
+
+Then run the following command:
+
 ```bash
 bun start
 ```
