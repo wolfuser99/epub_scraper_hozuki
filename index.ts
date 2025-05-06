@@ -27,8 +27,6 @@ if (!fs.existsSync(epubDir)) {
 // Configuración global de Puppeteer
 const puppeteerOptions = {
   headless: true,
-  args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  defaultViewport: null,
   timeout: 60000 // Aumentar el tiempo de espera predeterminado
 };
 
@@ -75,7 +73,7 @@ async function createVol(link: string, page: Page, volumeIndex: number) {
       content
     };
 
-    await new Epub(options, `./epubs/${title}.epub`).promise;
+    await new Epub(options, `./epubs/${options.title}.epub`).promise;
     console.log(`EPUB creado exitosamente: ${title}.epub`);
   } catch (err) {
     console.error(`Error al procesar el volumen en ${link}:`, err);
