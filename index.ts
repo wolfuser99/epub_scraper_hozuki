@@ -108,7 +108,7 @@ async function login() {
 
     for (const [index, link] of unique_links.entries()) {
       const volumeIndex = index + 1;
-      console.log(`Procesando volumen ${volumeIndex}: ${link}`);
+      console.log(`Procesando volumen ${volumeIndex}/${unique_links.length}: ${link}`);
       await createVol(link, page, volumeIndex);
     }
   } catch (error) {
